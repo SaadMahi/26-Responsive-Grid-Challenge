@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: xx-small;
+}
+.container {
+  display: grid;
+  height: 100vh;
+  padding: 1em;
+
+  grid-gap: 10px;
+
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 0.2fr 0.2fr 1fr 0.2fr;
+
+  grid-template-areas:
+    "header header header"
+    "sidebar navigation ads"
+    "sidebar main ads"
+    "footer footer footer";
+}
+
+.grid {
+  border: red solid 1px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* location areas to each grids */
+.header {
+  grid-area: header;
+}
+
+.navigation {
+  grid-area: navigation;
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.ads {
+  grid-area: ads;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Tablet Responsive */
+
+@media (max-width: 820px) {
+  .container {
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 0.2fr 0.2fr 4fr 0.2fr;
+
+    grid-template-areas:
+      "header header"
+      "navigation navigation"
+      "sidebar main"
+      "ads footer";
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.2fr 4fr 0.2fr 0.2fr;
+
+    grid-template-areas:
+      "header"
+      "navigation"
+      "main"
+      "sidebar"
+      "ads"
+      "footer";
+  }
+}
